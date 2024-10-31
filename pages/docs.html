@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Documentation</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/docs.css">
+</head>
+
+<body>
+    <!-- Left Sidebar Navigation -->
+    <aside class="docs-sidebar">
+        <div class="sidebar-header">
+            <div class="nav-brand">
+                <i class="fas fa-cube"></i>
+                <span>Package Name</span>
+            </div>
+            <button class="mobile-close">×</button>
+        </div>
+
+        <div class="sidebar-nav-top">
+            <a href="../home.html" class="back-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+            
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search documentation..." id="docsSearch">
+                <kbd class="search-shortcut">⌘K</kbd>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h3>Getting Started</h3>
+                <a href="#introduction" class="active">Introduction</a>
+                <a href="#installation">Installation</a>
+                <a href="#quick-start">Quick Start</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Main Concepts</h3>
+                <a href="#basic-usage">Basic Usage</a>
+                <a href="#configuration">Configuration</a>
+                <a href="#authentication">Authentication</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>API Reference</h3>
+                <a href="#core-api">Core API</a>
+                <a href="#hooks">Hooks</a>
+                <a href="#utilities">Utilities</a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Examples</h3>
+                <a href="#basic-examples">Basic Examples</a>
+                <a href="#advanced-examples">Advanced Examples</a>
+            </div>
+        </nav>
+
+        <div class="changelog-wrapper">
+            <button class="changelog-btn" onclick="openChangelogModal()">
+                <i class="fas fa-clock-rotate-left"></i>
+                <span>Changelog</span>
+                <span class="changelog-badge">New</span>
+            </button>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="https://github.com/your-username/your-package" class="github-link">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <div class="version-selector">
+                <span>Version:</span>
+                <select>
+                    <option>v2.0.0</option>
+                    <option>v1.9.0</option>
+                    <option>v1.8.0</option>
+                </select>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+        <div class="mobile-header">
+            <div class="mobile-header-left">
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="../home.html" class="back-home-mobile">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="mobile-title">Documentation</div>
+        </div>
+
+        <article class="content-section" id="introduction">
+            <h1>Introduction</h1>
+            <div class="badges">
+                <img src="https://img.shields.io/npm/v/your-package.svg" alt="npm version">
+                <img src="https://img.shields.io/npm/dm/your-package.svg" alt="npm downloads">
+                <img src="https://img.shields.io/github/license/your-username/your-package.svg" alt="license">
+            </div>
+            <p class="lead">A powerful and flexible package for modern web development.</p>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized performance with minimal overhead</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Secure</h3>
+                        <p>Built-in security best practices</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Modular</h3>
+                        <p>Use only what you need</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="installation">
+            <h2>Installation</h2>
+
+            <div class="installation-tabs">
+                <button class="tab active" data-tab="npm">npm</button>
+                <button class="tab" data-tab="yarn">yarn</button>
+                <button class="tab" data-tab="pnpm">pnpm</button>
+            </div>
+
+            <div class="tab-content active" id="npm-content">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre><code class="language-bash">npm install your-package-name</code></pre>
+                </div>
+            </div>
+
+            <div class="tab-content" id="yarn-content">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre><code class="language-bash">yarn add your-package-name</code></pre>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pnpm-content">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre><code class="language-bash">pnpm add your-package-name</code></pre>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="quick-start">
+            <h2>Quick Start</h2>
+            <p>Get started quickly with this simple example:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">import { initialize } from 'your-package-name';
+
+// Initialize the package
+const app = initialize({
+    apiKey: 'your-api-key',
+    options: {
+        debug: true,
+        timeout: 5000
+    }
+});
+
+// Basic usage
+async function main() {
+    try {
+        const result = await app.getData();
+        console.log(result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+            </div>
+        </article>
+
+        <article class="content-section" id="basic-usage">
+            <h2>Basic Usage</h2>
+            <p>Learn how to use the core features of the package in your application.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">import { Client } from 'your-package-name';
+
+// Create a new client instance
+const client = new Client();
+
+// Basic data fetching
+const getData = async () => {
+    try {
+        const response = await client.fetch('/endpoint');
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+// Event handling
+client.on('update', (data) => {
+    console.log('New update:', data);
+});</code></pre>
+            </div>
+        </article>
+
+        <article class="content-section" id="configuration">
+            <h2>Configuration</h2>
+            <p>Customize the package behavior with various configuration options.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">const config = {
+    // Basic settings
+    apiVersion: 'v2',
+    timeout: 5000,
+    retries: 3,
+    
+    // Advanced options
+    debug: true,
+    cache: {
+        enabled: true,
+        maxAge: 3600,
+        maxSize: 100
+    },
+    
+    // Custom headers
+    headers: {
+        'X-Custom-Header': 'value'
+    }
+};
+
+const client = new Client(config);</code></pre>
+            </div>
+
+            <h3>Configuration Options</h3>
+            <table class="config-table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>apiVersion</code></td>
+                        <td>string</td>
+                        <td>'v1'</td>
+                        <td>API version to use</td>
+                    </tr>
+                    <tr>
+                        <td><code>timeout</code></td>
+                        <td>number</td>
+                        <td>3000</td>
+                        <td>Request timeout in milliseconds</td>
+                    </tr>
+                    <tr>
+                        <td><code>retries</code></td>
+                        <td>number</td>
+                        <td>0</td>
+                        <td>Number of retry attempts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article class="content-section" id="authentication">
+            <h2>Authentication</h2>
+            <p>Learn how to authenticate your requests using different methods.</p>
+
+            <h3>API Key Authentication</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">const client = new Client({
+    apiKey: 'your-api-key'
+});</code></pre>
+            </div>
+
+            <h3>OAuth Authentication</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">const client = new Client();
+
+await client.authenticate({
+    type: 'oauth',
+    clientId: 'your-client-id',
+    clientSecret: 'your-client-secret',
+    scopes: ['read', 'write']
+});</code></pre>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <h4>Security Note</h4>
+                    <p>Never expose your API keys or client secrets in client-side code. Always use environment
+                        variables or a secure backend to handle sensitive credentials.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="core-api">
+            <h2>Core API Reference</h2>
+
+            <div class="api-card">
+                <div class="api-header">
+                    <h3>initialize(config)</h3>
+                    <span class="api-badge">Function</span>
+                </div>
+                <p>Initializes the package with the provided configuration.</p>
+
+                <div class="api-params">
+                    <h4>Parameters</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>config</td>
+                                <td><code>Object</code></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Configuration object for initialization</td>
+                            </tr>
+                            <tr>
+                                <td>config.apiKey</td>
+                                <td><code>string</code></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Your API key for authentication</td>
+                            </tr>
+                            <tr>
+                                <td>config.options</td>
+                                <td><code>Object</code></td>
+                                <td>Optional</td>
+                                <td>Additional configuration options</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="api-returns">
+                    <h4>Returns</h4>
+                    <p><code>Instance</code> - Returns an initialized instance of the package</p>
+                </div>
+
+                <div class="api-example">
+                    <h4>Example</h4>
+                    <div class="code-block">
+                        <pre><code class="language-javascript">const app = initialize({
+    apiKey: 'your-api-key',
+    options: {
+        debug: true,
+        timeout: 5000
+    }
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="examples">
+            <h2>Examples</h2>
+
+            <div class="example-card">
+                <h3>Basic Authentication</h3>
+                <div class="code-block">
+                    <pre><code class="language-javascript">import { auth } from 'your-package-name';
+
+// Token-based authentication
+const token = await auth.getToken({
+    clientId: 'your-client-id',
+    clientSecret: 'your-client-secret'
+});</code></pre>
+                </div>
+        </article>
+
+        <article class="content-section" id="hooks">
+            <h2>Hooks</h2>
+            <p>Extend functionality with custom hooks:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code class="language-javascript">import { useData } from 'your-package-name';
+
+function MyComponent() {
+    const { data, loading, error } = useData('endpoint');
+    
+    if (loading) return 'Loading...';
+    if (error) return 'Error!';
+    
+    return data;
+}</code></pre>
+            </div>
+        </article>
+
+        <article class="content-section" id="utilities">
+            <h2>Utilities</h2>
+            <p>Helper functions to simplify common tasks:</p>
+
+            <div class="api-card">
+                <div class="api-header">
+                    <h3>formatData(data, options)</h3>
+                    <span class="api-badge">Utility</span>
+                </div>
+                <p>Formats data according to specified options.</p>
+
+                <div class="code-block">
+                    <pre><code class="language-javascript">import { formatData } from 'your-package-name';
+
+const formatted = formatData(rawData, {
+    type: 'json',
+    pretty: true
+});</code></pre>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="basic-examples">
+            <h2>Basic Examples</h2>
+            <p>Common use cases and patterns:</p>
+
+            <div class="example-card">
+                <h3>Data Processing</h3>
+                <div class="code-block">
+                    <pre><code class="language-javascript">import { processData } from 'your-package-name';
+
+const result = await processData({
+    input: 'raw data',
+    format: 'json'
+});</code></pre>
+                </div>
+            </div>
+        </article>
+
+        <article class="content-section" id="advanced-examples">
+            <h2>Advanced Examples</h2>
+            <p>Complex scenarios and advanced usage:</p>
+
+            <div class="example-card">
+                <h3>Custom Pipeline</h3>
+                <div class="code-block">
+                    <pre><code class="language-javascript">import { createPipeline } from 'your-package-name';
+
+const pipeline = createPipeline()
+    .addStep('validate')
+    .addStep('transform')
+    .addStep('output');
+
+const result = await pipeline.execute(data);</code></pre>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div class="modal-overlay" id="changelogModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Changelog</h3>
+                <button class="modal-close" onclick="closeChangelogModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="changelog-entry">
+                    <div class="version-header">
+                        <h4>v2.0.0</h4>
+                        <span class="date">March 15, 2024</span>
+                    </div>
+                    <div class="changes">
+                        <div class="change-item">
+                            <span class="tag feature">Feature</span>
+                            <p>Added new API endpoints for advanced data processing</p>
+                        </div>
+                        <div class="change-item">
+                            <span class="tag fix">Fix</span>
+                            <p>Resolved memory leak in long-running operations</p>
+                        </div>
+                        <div class="change-item">
+                            <span class="tag breaking">Breaking</span>
+                            <p>Updated authentication method - see migration guide</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="changelog-entry">
+                    <div class="version-header">
+                        <h4>v1.9.0</h4>
+                        <span class="date">March 1, 2024</span>
+                    </div>
+                    <div class="changes">
+                        <div class="change-item">
+                            <span class="tag feature">Feature</span>
+                            <p>Introduced new caching mechanism</p>
+                        </div>
+                        <div class="change-item">
+                            <span class="tag improvement">Improvement</span>
+                            <p>Enhanced error handling and reporting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="../js/docs.js"></script>
+</html>
