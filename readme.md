@@ -36,7 +36,7 @@ To run the project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/SrWitty/Docs-Website.git
+    git clone https://github.com/M7mdJs/Docs-Website.git
     ```
 2. **Navigate to the project folder**:
     ```bash
@@ -76,7 +76,7 @@ To run the project locally:
 
 For assistance or inquiries, please reach out to the developer:
 
--  [Developer's GitHub Profile](https://github.com/SrWitty)
+-  [Developer's GitHub Profile](https://github.com/M7mdJs)
 -  [Developer's Discord](https://discord.com/users/1091118468155314306)
 -  [Developer's Website](https://m7mjs.pages.dev/)
 
